@@ -1,0 +1,130 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Noto Sans KR", sans-serif;
+  background: #ffffff;
+  color: #111111;
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.layout {
+  display: flex;
+  height: 100vh;
+}
+
+/* -----------------------------
+   왼쪽 네비게이션 (2/5)
+------------------------------ */
+.sidebar {
+  width: 40vw;
+  padding: 50px 40px;
+  border-right: 1px solid #e0e0e0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #ffffff;
+}
+
+.top-area {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.nav ul {
+  list-style: none;
+}
+
+.nav li + li {
+  margin-top: 16px;
+}
+
+.nav a {
+  font-size: 14px;
+  letter-spacing: 0.18em;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+.info p {
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+/* -----------------------------
+   오른쪽 프로토타입 2열 레이아웃
+------------------------------ */
+.content {
+  margin-left: 40vw;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 50px;
+}
+
+.proto-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.proto-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.proto-card img {
+  width: 187.5px;          /* 고정 가로 */
+  height: 406px;         /* 고정 세로 */
+  object-fit: cover;     /* 이미지 꽉 채움 (잘라도 OK) */
+  border-radius: 10px;
+  transition: 0.2s ease;
+  display: block;
+  background: #ffffff;
+}
+
+.proto-card img:hover {
+  transform: translateY(-4px);
+  opacity: 0.92;
+}
+
+.proto-title {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+/* -----------------------------
+   모바일 대응
+------------------------------ */
+@media (max-width: 900px) {
+  .proto-grid {
+    grid-template-columns: 1fr;
+  }
+}
